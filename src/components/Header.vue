@@ -79,8 +79,12 @@ header {
 }
 
 nav {
-  display: flex;
+  display: none;
   gap: 20px;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+  }
 
   ul {
     padding: 0;

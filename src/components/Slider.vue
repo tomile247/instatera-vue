@@ -151,6 +151,10 @@ import terapijaImage from '@/assets/terapija.jpg';
   @media screen and (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  @media screen and (min-width: 1300px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .service-slide {
@@ -167,6 +171,7 @@ import terapijaImage from '@/assets/terapija.jpg';
   -webkit-box-shadow: 0px 15px 50px 0px rgba(27, 32, 50, 0.1);
   box-shadow: 0px 15px 50px 0px rgba(27, 32, 50, 0.1);
   color: black;
+  border-radius: 15px;
 
   .title {
     backdrop-filter: blur(10px);

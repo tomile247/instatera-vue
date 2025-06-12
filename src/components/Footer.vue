@@ -121,29 +121,21 @@ import logo from '@/assets/instatera-manikin.svg'
     display: flex;
     justify-content: space-between;
     border-radius: 15px;
+    flex-direction: column;
     //background-color: #5C635B;
     //background-color:#847F7E;
     //background: #13A57466;
     //background-color:#8F4A38;
-
-
-
-
-
-
-
-
-
-
-
-
-
     //background: #15674f;
     //background: #13A574;
     //background: #15674f;
     //background: #F9FAFBFF;
     //background: #111827FF;
     color:  #030712FF;
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
 
     h3 {
       color: #E87A5D;

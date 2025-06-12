@@ -27,11 +27,6 @@
           motivira, ne samo profesionalno već me i moralno ispunjava. Veliko je zadovoljstvo imati mogućnost pomoći
           ljudima u poboljšanju kvalitete njihovog života, a najsretnija sam kada izađete sretni, zadovoljni i bez
           boli.</p>
-
-        <p>Ime Centra u prijevodu s latinskog jezika znači „u ravnoteži“, a odabrala sam ga jer predstavlja dio životne
-          filozofije koju želim promovirati. Svojim klijentima uvijek nastojim naglasiti važnost ravnoteže na fizičkoj,
-          mentalnoj i energetskoj razini tijela kao i njihovu međusobnu povezanost te moć utjecaja jedne na drugu.
-          Zagovaram holistički pristup kao i važnost detaljne anamneze prije samog početka terapije.</p>
       </div>
       <img :src="portret" class="portret__image" alt="Portret"/>
     </article>
@@ -143,6 +138,11 @@ section {
   display: flex;
   gap: 20px;
   padding: 20px;
+  flex-direction: column;
+
+  @media screen and (min-width: 1024px) {
+      flex-direction: row;
+  }
 }
 
 span.highlight {
@@ -152,6 +152,7 @@ span.highlight {
   border-radius: 15px;
   backdrop-filter: blur(10px);
   font-weight: 500;
+  max-width: 250px;
 }
 
 #intro {
@@ -169,13 +170,22 @@ span.highlight {
 #o-meni {
   article {
     display: flex;
+    flex-direction: column;
     gap: 50px;
     align-items: center;
     font-size: 1.2rem;
+
+    @media screen and (min-width: 1024px) {
+      flex-direction: row;
+    }
   }
 
   img {
-    width: 50%;
+    width: 100%;
+
+    @media screen and (min-width: 1024px) {
+      width: 50%;
+    }
   }
 }
 
@@ -183,10 +193,15 @@ span.highlight {
   article {
     display: flex;
     gap: 50px;
+    flex-direction: column;
     align-items: center;
     background-color: var(--color-green-light);
     border-radius: 15px;
     color: var(--color-text);
+
+    @media screen and (min-width: 1024px) {
+        flex-direction: row;
+    }
 
     div {
       padding: 20px;
@@ -195,7 +210,11 @@ span.highlight {
 
   img {
     border-radius: 15px;
-    width: 60%;
+    width: 100%;
+
+    @media screen and (min-width: 1024px) {
+      width: 60%;
+    }
   }
 }
 
