@@ -3,9 +3,9 @@
     <router-link to="/">
       <img :src="logo" class="logo" alt="Logo"/>
     </router-link>
-    <nav>
+    <nav :active="isMobileMenuOpen ? true : null">
       <router-link to="/">Početna</router-link>
-      <div class="nav-dropdown" :active="isDropdownOpen ? true : null" @mouseleave="isDropdownOpen = false" @mouseenter="isDropdownOpen = true">
+      <div class="nav-dropdown" :active="isDropdownOpen ? true : null">
         <span class="nav-dropdown-trigger" @click="isDropdownOpen = !isDropdownOpen">
           Tretmani
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
@@ -43,9 +43,7 @@
           </li>
 
           <li>
-            <router-link to="/usluge" class="nav-dropdown-trigger">
-              <button>Svi tretmani</button>
-            </router-link>
+            <router-link to="/usluge" class="nav-dropdown-trigger">Svi tretmani</router-link>
           </li>
         </ul>
       </div>
@@ -53,10 +51,11 @@
       <router-link to="/cjenik">Cjenik</router-link>
       <router-link to="/radno-vrijeme">Radno vrijeme</router-link>
     </nav>
-    <button>Rezerviraj</button>
-    <button>
-      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-    </button>
+
+    <div id="menu" role="button" @click="isMobileMenuOpen = !isMobileMenuOpen" :active="isMobileMenuOpen ? true : null">
+      <span></span>
+      <span></span>
+    </div>
   </header>
 </template>
 
@@ -65,31 +64,89 @@ import logo from '@/assets/instatera.svg'
 import {ref} from 'vue'
 
 const isDropdownOpen = ref(false)
+const isMobileMenuOpen = ref(false)
 
 </script>
 
 <style scoped>
+
+#menu {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+}
+
+#menu span {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  left: 0;
+  transition: 0.25s ease-in-out;
+}
+
+#menu span:nth-child(1) {
+  top: 5px;
+}
+
+#menu span:nth-child(2) {
+  top: 15px;
+}
+
+#menu[active] span:nth-child(1) {
+  top: 10px;
+  transform: rotate(-45deg);
+}
+
+#menu[active] span:nth-child(2) {
+  top: 10px;
+  transform: rotate(45deg);
+}
+
 header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .logo {
   width: 250px;
 }
 
-nav {
-  display: none;
-  gap: 20px;
+nav[active] {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
 
-  @media screen and (min-width: 1024px) {
-    display: flex;
-  }
+nav {
+  position: absolute;
+  box-sizing: border-box;
+  top: 90px;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  border: 1px solid rgba(231, 231, 233, 0.5);
+  border-radius: 15px;
+  display: none;
+  gap: 10px;
 
   ul {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -102,12 +159,9 @@ nav {
   position: relative;
 }
 
-.nav-dropdown[active] {
-
-}
-
 .nav-dropdown-trigger {
   display: flex;
+  cursor: pointer;
   align-items: center;
   font-weight: 500;
   color: var(--color-green-light);
@@ -119,38 +173,23 @@ nav {
 }
 
 .nav-dropdown-list {
-  position: absolute;
-  top: 30px;
+  max-height: 0;
   left: 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  background: white;
   visibility: hidden;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  min-width: 230px;
-  padding: 24px;
-  -webkit-transform: translateX(0) translateY(-10px);
-  -ms-transform: translateX(0) translateY(-10px);
-  transform: translateX(0) translateY(-10px);
-  -webkit-transition: opacity 0.2s ease-in-out 0.05s, visibility 0.2s ease-in-out 0.05s, -webkit-transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s;
-  transition: opacity 0.2s ease-in-out 0.05s, visibility 0.2s ease-in-out 0.05s, -webkit-transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s;
-  transition: opacity 0.2s ease-in-out 0.05s, visibility 0.2s ease-in-out 0.05s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s;
-  transition: opacity 0.2s ease-in-out 0.05s, visibility 0.2s ease-in-out 0.05s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s, -webkit-transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s;
-  border: 1px solid rgba(231, 231, 233, 0.5);
-  border-radius: 8px;
+  transition: all 200ms ease-in-out;
   opacity: 0;
-  -webkit-box-shadow: 0px 15px 50px 0px rgba(27, 32, 50, 0.1);
-  box-shadow: 0px 15px 50px 0px rgba(27, 32, 50, 0.1);
+  gap: 10px;
+  padding-left: 20px;
 }
 
 .nav-dropdown-list[active] {
   opacity: 1;
   visibility: visible;
+  max-height: 1000px;
+  padding-top: 10px;
 }
 
 </style>
