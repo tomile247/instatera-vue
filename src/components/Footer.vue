@@ -89,6 +89,7 @@ import logo from '@/assets/instatera-manikin.svg'
     flex-direction: column;
     color: var(--color-text);
     gap: 20px;
+    width: 100%;
   }
 
   ul, li {
