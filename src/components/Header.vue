@@ -23,7 +23,6 @@
           <li>
             <router-link to="/medicinska">Medicinska masaža</router-link>
           </li>
-
           <li>
             <router-link to="/tecar">Tecar</router-link>
           </li>
@@ -103,6 +102,13 @@ nav {
 .nav-dropdown-trigger {
   display: flex;
   align-items: center;
+  font-weight: 500;
+  color: var(--color-green-light);
+  text-decoration: inherit;
+}
+
+.nav-dropdown-trigger:hover {
+  color: var(--color-green-dark);
 }
 
 .nav-dropdown-list {

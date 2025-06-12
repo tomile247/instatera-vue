@@ -173,15 +173,6 @@
   </swiper>
 </template>
 
-<script setup>
-import bowenImage from '@/assets/bowen.jpg';
-import liceImage from '@/assets/lice.jpg';
-import medicinskaImage from '@/assets/medicinska.jpg';
-import oziljakImage from '@/assets/oziljak.jpg';
-import tecarImage from '@/assets/tecar.jpg';
-import terapijaImage from '@/assets/terapija.jpg';
-</script>
-
 <script>
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import 'swiper/css';
@@ -196,19 +187,7 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-  },
-  setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
-    const onSlideChange = () => {
-      console.log('slide change');
-    };
-    return {
-      onSwiper,
-      onSlideChange,
-    };
-  },
+  }
 };
 </script>
 
