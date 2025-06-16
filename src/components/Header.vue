@@ -152,7 +152,7 @@ header {
 nav[active] {
   opacity: 1;
   visibility: visible;
-  max-height: calc(90dvh - 80px);
+  max-height: calc(95dvh - 80px);
   padding: 20px;
 }
 
