@@ -193,7 +193,6 @@ export default {
 
 <style scoped>
 .swiper-slide {
-  color: var(--color-text);
   border-radius: 15px;
   display: flex;
   justify-content: center;
@@ -201,6 +200,5 @@ export default {
   text-align: center;
   flex-direction: column;
   height: 300px;
-  background: #E87A5D;
 }
 </style>

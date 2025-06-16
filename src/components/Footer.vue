@@ -123,15 +123,8 @@ import logo from '@/assets/instatera-manikin.svg'
     justify-content: space-between;
     border-radius: 15px;
     flex-direction: column;
-    //background-color: #5C635B;
-    //background-color:#847F7E;
-    //background: #13A57466;
-    //background-color:#8F4A38;
-    //background: #15674f;
-    //background: #13A574;
-    //background: #15674f;
-    //background: #F9FAFBFF;
-    //background: #111827FF;
+
+
     color:  #030712FF;
 
     @media screen and (min-width: 1024px) {
@@ -139,48 +132,18 @@ import logo from '@/assets/instatera-manikin.svg'
     }
 
     h3 {
-      color: #E87A5D;
-
-
+      color: #13A574;
     }
 
 
     a {
       color:  #030712FF;
-      //color: #13A574;
     }
   }
 
   .footer__bottom {
     padding: 10px 50px;
-    background-color: #B9B8A8;
-    background-color: #8F9779;
-    background: #15674f;
-    background: #13A574;
-    background: #15674f;
-    background: #F9FAFBFF;
-    background: #111827FF;
-    background:  #030712FF;
-
-    background: #13A57466;
-    //background-color:#8F4A38;
-    background-color: #E87A5D;
-
-    //background-color: #C6AE8C;
-
-
-
-
-
-
-    //background-color: #B2B6AB;
-
-    //background-color: #DDC6AD;
-    //background-color: #8F9779;
-    //background-color:#C6AE8C;
-
-
-
+    background-color: #C6AE8C;
     color: var(--color-text);
     border-radius: 15px;
     display: flex;
