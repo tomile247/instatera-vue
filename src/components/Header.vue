@@ -152,7 +152,7 @@ header {
 nav[active] {
   opacity: 1;
   visibility: visible;
-  max-height: 600px;
+  max-height: calc(90dvh - 80px);
   padding: 20px;
 }
 
@@ -173,7 +173,7 @@ nav {
   border-radius: 15px;
   gap: 10px;
   transition: all 250ms ease-in-out;
-
+  overflow: auto;
   ul {
     box-sizing: border-box;
     padding: 0;
@@ -217,12 +217,13 @@ nav {
   opacity: 0;
   gap: 10px;
   padding-left: 60px;
+  overflow: hidden;
 }
 
 .nav-dropdown-list[active] {
   opacity: 1;
   visibility: visible;
-  max-height: 1000px;
+  max-height: 400px;
   padding-top: 10px;
 }
 
