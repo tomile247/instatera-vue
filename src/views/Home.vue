@@ -22,7 +22,11 @@
         <p>Tvoje tijelo će ti biti zahvalno.</p>
       </div>
 
-      <button>Rezervirajte termin</button>
+      <div class="cta-section">
+        <button>Rezervirajte termin</button>
+        <button class="button-hollow">Poklon bon</button>
+      </div>
+
     </div>
 
     <div class="second-section">
@@ -55,44 +59,16 @@
   </section>
 
   <section id="recenzije">
-    <h2>Recenzije</h2>
+    <h2>Što misle klijenti?</h2>
     <article>
-      <h3>Pročitajte što klijeni misle o meni</h3>
       <div class="slider">
         <ReviewSlider/>
       </div>
     </article>
   </section>
-
-  <section id="poklon-bon">
-    <h2>Poklon bon</h2>
-    <article>
-      <div>
-        <p>Tražiš poseban poklon za dragu osobu? Poklon bon za tretman je savršen izbor! Daruj trenutak opuštanja,
-          zdravlja
-          i njege – bilo da se radi o masaži, terapiji ili tretmanu lica, svaki bon prilagođavamo željama
-          primatelja.</p>
-
-        <p>Kako funkcionira?</p>
-
-        <ol>
-          <li>Odaberi tretman ili iznos</li>
-          <li>Poklon bon možeš preuzeti osobno ili ga šaljemo digitalno</li>
-          <li>Vrijedi 3 mjeseca od datuma kupnje</li>
-          <li>Može se iskoristiti za bilo koji tretman iz ponude</li>
-        </ol>
-
-        <p>Neka tvoj poklon ostavi dojam – jer zdravlje i dobrobit su najljepši dar.</p>
-
-        <p>Za narudžbu poklon bona, javi se telefonom, porukom ili putem e-maila.</p>
-      </div>
-      <img :src="poklonBon" class="poklon-bon__image" alt="Poklon bon"/>
-    </article>
-  </section>
 </template>
 
 <script lang="ts" setup>
-import poklonBon from '@/assets/poklon-bon.jpg';
 import Slider from "@/components/Slider.vue";
 import ReviewSlider from "@/components/ReviewSlider.vue";
 import portret from '@/assets/portret.jpg';
@@ -110,14 +86,14 @@ section {
   flex-direction: column;
 
   @media screen and (min-width: 1024px) {
-      flex-direction: row;
+    flex-direction: row;
   }
 }
 
 span.highlight {
   padding: 20px;
   display: flex;
-  background-color:#8F4A3866;
+  background-color: #8F4A3866;
   border-radius: 15px;
   backdrop-filter: blur(10px);
   font-weight: 500;
@@ -125,21 +101,26 @@ span.highlight {
 }
 
 #intro {
-  background-size: cover;
-  max-height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #0e0e0e;
+  background-color:#CBBA9C;
+  color: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (min-width: 1024px){
+    flex-direction: row;
+  }
 
   .first-section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-    width: 50%;
+    width: 100%;
+
+    @media screen and (min-width: 1024px){
+      width: 50%;
+    }
 
     h1 {
       font-size: 4rem;
@@ -151,15 +132,29 @@ span.highlight {
   }
 
   .second-section {
-    width: 50%;
+    width: 100%;
+
+    @media screen and (min-width: 1024px){
+      width: 50%;
+    }
+
 
     img {
-      width: 50vmax;
+      width: 100%;
+
+      @media screen and (min-width: 1024px){
+        width: 50vmax;
+      }
     }
   }
 
+  .cta-section {
+    display: flex;
+    gap: 20px;
+  }
+
   button {
-    width: 300px;
+    width: 250px;
   }
 }
 
@@ -168,9 +163,8 @@ h2 {
 }
 
 #o-meni {
-  max-height: 100vh;
-
   article {
+    background-color: #B2B6AB;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -179,7 +173,11 @@ h2 {
 
 
     div {
-      width: 30%;
+      width: 100%;
+
+      @media screen and (min-width: 1024px){
+        width: 30%;
+      }
       font-size: 1.5rem;
     }
 
@@ -189,50 +187,26 @@ h2 {
   }
 
   img {
-    width: auto;
-    height: 30vmax;
-  }
-}
-
-#poklon-bon {
-  article {
-    display: flex;
-    gap: 50px;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--color-green-light);
-    border-radius: 15px;
-    color: var(--color-text);
-
-    @media screen and (min-width: 1024px) {
-        flex-direction: row;
-    }
-
-    div {
-      padding: 20px;
-    }
-  }
-
-  img {
-    border-radius: 15px;
     width: 100%;
 
-    @media screen and (min-width: 1024px) {
-      width: 60%;
+    @media screen and (min-width: 1024px){
+      width: 50%;
     }
+
   }
 }
 
 #recenzije {
-  height: 60vh;
+
   article {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
   }
+
   .slider {
-    max-width: 50%;
+    max-width: 90%;
   }
 }
 </style>

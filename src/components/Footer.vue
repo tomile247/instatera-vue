@@ -16,6 +16,9 @@
             <router-link to="/usluge">Usluge</router-link>
           </li>
           <li>
+            <router-link to="/poklon-bon">Poklon bon</router-link>
+          </li>
+          <li>
             <router-link to="/o-meni">O meni</router-link>
           </li>
         </ul>
@@ -123,8 +126,6 @@ import logo from '@/assets/instatera-manikin.svg'
     justify-content: space-between;
     border-radius: 15px;
     flex-direction: column;
-
-
     color:  #030712FF;
 
     @media screen and (min-width: 1024px) {
@@ -143,10 +144,20 @@ import logo from '@/assets/instatera-manikin.svg'
 
   .footer__bottom {
     padding: 10px 50px;
-    background-color: #C6AE8C;
     color: var(--color-text);
     border-radius: 15px;
     display: flex;
     justify-content: space-between;
+
+    //background-color:#8F4A38;
+    //background-color: #5C635B;
+    //background-color: #A0A799;
+    //background-color: #8F9779;
+    background-color:#847F7E;
+    //background-color:#968E8D;
+    //background-color:#A0A799;
+    //background-color:#AFA999;
+    //background-color: #B9B8A8;
+    //background-color: #B2B6AB;
   }
 </style>

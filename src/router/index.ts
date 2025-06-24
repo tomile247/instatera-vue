@@ -98,6 +98,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'CestoPostavljanaPitanja',
         component: () => import('../views/CestoPostavljanaPitanja.vue'),
     },
+    {
+        path: '/poklon-bon',
+        name: 'PoklonBon',
+        component: () => import('../views/PoklonBon.vue'),
+    },
 ]
 
 const router = createRouter({

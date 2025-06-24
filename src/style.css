@@ -99,22 +99,36 @@ button,
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #E87A5D;
+  background-color: var(--color-green-dark);
   color: white;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }
+
+
 button:hover,
 .button:hover{
   background-color: white;
-  color: #E87A5D;
-  border-color: #E87A5D;
+  color: var(--color-green-dark);
+  border-color: var(--color-green-dark);
 }
 button:focus,
 button:focus-visible,
 .button:focus,
 .button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.button-hollow {
+  background-color: white;
+  color: var(--color-green-dark);
+  border-color: var(--color-green-dark);
+}
+
+.button-hollow:hover {
+  background-color: var(--color-green-dark);
+  color: white;
+  border-color: transparent;
 }
 
 #app {
