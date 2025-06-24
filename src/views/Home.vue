@@ -1,15 +1,32 @@
 <template>
-  <section id="intro" :style="{ backgroundImage: `url(${intro})` }">
+  <section id="intro">
 
-    <div class="intro-text-container">
-<!--        <h1>Instatera</h1>-->
-<!--        <h2>CENTAR FIZIOTERAPIJE</h2>-->
+    <div class="first-section">
+      <div>
+        <h1>Vratite tijelu slobodu pokreta i snagu.</h1>
+        <h2>Posebni tretmani prilagođeni vašim potrebama.</h2>
+      </div>
+
+      <div class="highlight-cards">
+        <span class="highlight">Više od 10 godina iskustva</span>
+        <span class="highlight">300+ zadovoljnih klijenata</span>
+        <span class="highlight">9 specijaliziranih tretmana</span>
+      </div>
+
+      <div>
+        <p>Rezerviraj svoj termin brzo i jednostavno!</p>
+        <p>Preko aplikacije SrediMe možeš u svega par klikova rezervirati svoj tretman u Instatera centru. Bez čekanja,
+          bez
+          poziva — samo ti, tvoje potrebe i tvoje vrijeme.</p>
+        <p>Tvoje vrijeme je dragocjeno — zato smo ti olakšali put do opuštanja! Odaberi uslugu, termin i… vidimo se!</p>
+        <p>Tvoje tijelo će ti biti zahvalno.</p>
+      </div>
+
+      <button>Rezervirajte termin</button>
     </div>
 
-    <div class="highlight-cards">
-      <span class="highlight">Više od 10 godina iskustva</span>
-      <span class="highlight">300+ zadovoljnih klijenata</span>
-      <span class="highlight">9 specijaliziranih tretmana</span>
+    <div class="second-section">
+      <img :src="intro">
     </div>
   </section>
 
@@ -40,22 +57,10 @@
   <section id="recenzije">
     <h2>Recenzije</h2>
     <article>
-      <ReviewSlider/>
-    </article>
-  </section>
-
-  <section id="rezervacije">
-    <h2>Rezerviraj termin</h2>
-    <article>
-      <div>
-        <p>Rezerviraj svoj termin brzo i jednostavno!</p>
-        <p>Preko aplikacije SrediMe možeš u svega par klikova rezervirati svoj tretman u Instatera centru. Bez čekanja,
-          bez
-          poziva — samo ti, tvoje potrebe i tvoje vrijeme.</p>
-        <p>Tvoje vrijeme je dragocjeno — zato smo ti olakšali put do opuštanja! Odaberi uslugu, termin i… vidimo se!</p>
-        <p>Tvoje tijelo će ti biti zahvalno.</p>
+      <h3>Pročitajte što klijeni misle o meni</h3>
+      <div class="slider">
+        <ReviewSlider/>
       </div>
-      <img src="https://static.sredime.hr/image/logo.png">
     </article>
   </section>
 
@@ -84,17 +89,10 @@
       <img :src="poklonBon" class="poklon-bon__image" alt="Poklon bon"/>
     </article>
   </section>
-
-  <section id="kako-do-mene">
-    <h2>Kako do mene?</h2>
-    <GoogleMap/>
-  </section>
-
 </template>
 
 <script lang="ts" setup>
 import poklonBon from '@/assets/poklon-bon.jpg';
-import GoogleMap from '@/components/GoogleMap.vue';
 import Slider from "@/components/Slider.vue";
 import ReviewSlider from "@/components/ReviewSlider.vue";
 import portret from '@/assets/portret.jpg';
@@ -106,24 +104,9 @@ section {
   border-radius: 15px;
 }
 
-.intro-text-container {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-
-  h1 {
-    font-size: 4rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-}
-
 .highlight-cards {
   display: flex;
   gap: 20px;
-  padding: 20px;
   flex-direction: column;
 
   @media screen and (min-width: 1024px) {
@@ -143,23 +126,62 @@ span.highlight {
 
 #intro {
   background-size: cover;
-  height: 40vh;
-  min-height: 650px;
+  max-height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
-  color: white;
+  color: #0e0e0e;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+
+  .first-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    width: 50%;
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  .second-section {
+    width: 50%;
+
+    img {
+      width: 50vmax;
+    }
+  }
+
+  button {
+    width: 300px;
+  }
+}
+
+h2 {
+  font-size: 3rem
 }
 
 #o-meni {
+  max-height: 100vh;
+
   article {
     display: flex;
     flex-direction: column;
     gap: 50px;
+    justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+
+
+    div {
+      width: 30%;
+      font-size: 1.5rem;
+    }
 
     @media screen and (min-width: 1024px) {
       flex-direction: row;
@@ -167,11 +189,8 @@ span.highlight {
   }
 
   img {
-    width: 100%;
-
-    @media screen and (min-width: 1024px) {
-      width: 50%;
-    }
+    width: auto;
+    height: 30vmax;
   }
 }
 
@@ -205,28 +224,15 @@ span.highlight {
 }
 
 #recenzije {
-
-}
-
-#rezervacije {
+  height: 60vh;
   article {
-    text-align: center;
-    padding: 50px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: 50px;
-    border-radius: 15px;
+    flex-direction: column;
   }
-
-  div {
-    width: 70%;
-  }
-
-  img {
-    width: auto;
-    height: 60px;
+  .slider {
+    max-width: 50%;
   }
 }
 </style>

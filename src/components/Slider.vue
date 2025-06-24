@@ -151,10 +151,6 @@ import terapijaImage from '@/assets/terapija.jpg';
   @media screen and (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  @media screen and (min-width: 1300px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .service-slide {
